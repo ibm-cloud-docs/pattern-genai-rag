@@ -89,7 +89,7 @@ The following table outlines the requirements that are addressed in this archite
 | Storage            | Provide storage that meets the application and database performance requirements. |
 | Networking         | Deploy workloads in isolated environment and enforce information flow policies. \n Provide secure, encrypted connectivity to the cloud’s private network for management purposes. \n Distribute incoming application requests across available compute resources. \n Support failover of application to alternate site in the event of planned or unplanned outages \n Provide public and private DNS resolution to support use of hostnames instead of IP addresses. |
 | Security           | Ensure all operator actions are executed securely through a bastion host. \n Protect the boundaries of the application against denial-of-service and application-layer attacks. \n Encrypt all application data in transit and at rest to protect from unauthorized disclosure. \n Encrypt all backup data to protect from unauthorized disclosure. \n Encrypt all security data (operational and audit logs) to protect from unauthorized disclosure. \n Encrypt all data using customer managed keys to meet regulatory compliance requirements for additional security and customer control. \n Protect secrets through their entire lifecycle and secure them using access control measures. |
-| DevOps            | THIS NEEDS TO BE UPDATED |
+| DevOps            | Delivering software and services at the speed the market demands requires teams to iterate and experiment rapidly. They must deploy new versions frequently, driven by feedback and data. |
 | Resiliency         | Support application availability targets and business continuity policies. \n Ensure availability of the application in the event of planned and unplanned outages. \n Provide highly available compute, storage, network, and other cloud services to handle application load and performance requirements. \n Backup application data to enable recovery in the event of unplanned outages. \n Provide highly available storage for security data (logs) and backup data. \n Automate recovery tasks to minimize down time |
 | Service Management | Monitor system and application health metrics and logs to detect issues that might impact the availability of the application. \n Generate alerts/notifications about issues that might impact the availability of applications to trigger appropriate responses to minimize down time. \n Monitor audit logs to track changes and detect potential security problems. \n Provide a mechanism to identify and send notifications about issues found in audit logs. |
 {: caption="Table 1. Requirements" caption-side="bottom"}
@@ -101,30 +101,30 @@ Update the following table below with components that are unique to this archite
 
 | Aspects | Architecture components | How the component is used |
 | -------------- | -------------- | -------------- |
-| Data | WatsonX Assistance | Conversational artificial intelligence platform |
-|  | Watson Discovery | Automates the discovery of information and insights with advanced Natural Language Processing and Understanding. |
-| Compute | Virtual Servers for VPC | Web, App, and database servers |
-| Storage | Cloud Object Storage | Web app static content, backups, logs (application, operational, and audit logs) |
-|  | VPC Block Storage | Web app storage if needed |
-| Networking | VPC Virtual Private Network (VPN) | Remote access to manage resources in private network |
-|  | Virtual Private Endpoint (VPE) | For private network access to Cloud Services, e.g., Key Protect, COS, etc. |
-|  | VPC Load Balancers | Application Load Balancing for web servers, app servers, and database servers |
-|  | Direct Link 2.0 | Seamlessly connect on-premises resources to cloud resources. |
-|  | Transit Gateway (TGW) | Connects the Workload and Management VPCs within a region.
-|  | Cloud Internet Services (CIS) | Global load balancing between regions. Public DNS resolution. |
-| Security | IAM | IBM Cloud Identity & Access Management |
-|  | BYO Bastion Host on VPC VSI | Remote access with Privileged Access Management |
-|  | Hyper Protect Crypto Services (HPCS) | Hardware security module (HSM) and Key Management Service |
-|  | App ID | Add authentication to web and mobile apps. |
-|  | Secrets Manager | Certificate and Secrets Management |
-|  | Security and Compliance Center (SCC) | Define policy as code, implement controls for secure data and workload deployments, and assess security and compliance posture. |
-| DevOps | Continuous Integration (CI) | 	A pipeline that tests, scans and builds the deployable artifacts from the application repositories. |
-|  | Continuous Deployment (CD) | A pipeline that generates all of the evidence and change request summary content. |
-|  | Container Registry | Highly available, and scalable private image registry |
-| Resiliency | 	VPC VSIs, VPC Block across multiple zones in two regions | Web, app, database high availability and disaster recovery |
-| Service Management | IBM Cloud Monitoring | Apps and operational monitoring |
-|  | IBM Log Analysis | Apps and operational logs |
-|  | Activity Tracker Event Routing | Audit logs |
+| Data | [WatsonX Assistance](https://www.ibm.com/products/watsonx-assistant) | Conversational artificial intelligence platform |
+|  | [Watson Discovery](https://www.ibm.com/products/watson-discovery) | Automates the discovery of information and insights with advanced Natural Language Processing and Understanding. |
+| Compute | [Virtual Servers for VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui) | Web, App, and database servers |
+| Storage | [Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | Web app static content, backups, logs (application, operational, and audit logs) |
+|  | [VPC Block Storage](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-block) | Web app storage if needed |
+| Networking | [VPC Virtual Private Network (VPN)](https://cloud.ibm.com/docs/iaas-vpn?topic=iaas-vpn-getting-started) | Remote access to manage resources in private network |
+|  | [Virtual Private Endpoint (VPE)](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpe) | For private network access to Cloud Services, e.g., Key Protect, COS, etc. |
+|  | [VPC Load Balancers](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers) | Application Load Balancing for web servers, app servers, and database servers |
+|  | [Direct Link 2.0](https://cloud.ibm.com/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) | Seamlessly connect on-premises resources to cloud resources. |
+|  | [Transit Gateway (TGW)](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started) | Connects the Workload and Management VPCs within a region.
+|  | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started) | Global load balancing between regions. Public DNS resolution. |
+| Security | [IAM](https://cloud.ibm.com/docs/account?topic=account-cloudaccess) | IBM Cloud Identity & Access Management |
+|  | [BYO Bastion Host on VPC VSI](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management |
+|  | [Hyper Protect Crypto Services (HPCS)](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) | Hardware security module (HSM) and Key Management Service |
+|  | [App ID](https://cloud.ibm.com/docs/appid?topic=appid-getting-started) | Add authentication to web and mobile apps. |
+|  | [Secrets Manager](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
+|  | [Security and Compliance Center (SCC)](https://cloud.ibm.com/docs/security-compliance?topic=security-compliance-getting-started) | Define policy as code, implement controls for secure data and workload deployments, and assess security and compliance posture. |
+| DevOps | [Continuous Integration (CI)](https://cloud.ibm.com/docs/containers?topic=containers-cicd) | 	A pipeline that tests, scans and builds the deployable artifacts from the application repositories. |
+|  | [Continuous Deployment (CD)](https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | A pipeline that generates all of the evidence and change request summary content. |
+|  | [Container Registry](https://cloud.ibm.com/apidocs/container-registry) | Highly available, and scalable private image registry |
+| Resiliency | 	[VPC VSIs, VPC Block across multiple zones in two regions](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-multi-region) | Web, app, database high availability and disaster recovery |
+| Service Management | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
+|  | [IBM Log Analysis](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started) | Apps and operational logs |
+|  | [Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started) | Audit logs |
 {: caption="Table 2. Components" caption-side="bottom"}
 
 ## Compliance
