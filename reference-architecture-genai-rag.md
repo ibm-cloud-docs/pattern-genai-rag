@@ -4,7 +4,7 @@ copyright:
   years: 2024
 lastupdated: "2024-03-06"
 
-subcollection: pattern-genai-rag
+subcollection: genai-pattern
 
 authors:
 - name: Ana Biazetti
@@ -17,7 +17,7 @@ version: 1.0
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
-docs: /docs/pattern-genai-rag
+docs: /docs/genai-pattern
 
 content-type: reference-architecture
 
@@ -34,8 +34,8 @@ or tile in the IBM Cloud catalog, match the title to the catalog. See
 https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
-# RAG Pattern for WatsonX on IBM Cloud <!-- H1 -->
-{: #genai-rag}
+# GenAI Pattern for Watsonx on IBM Cloud <!-- H1 -->
+{: #genai-pattern}
 {: toc-content-type="reference-architecture"}
 {: toc-version="1.0"}
 
@@ -44,23 +44,18 @@ The IDs, such as {: #title-id} are required for publishing this reference archit
 the toc attributes on the H1, repeating the values from the YAML header.
  -->
 
-<!-->:information_source: **Tip:** For more information about this template, see [Creating reference architectures](https://test.cloud.ibm.com/docs/writing?topic=writing-reference-architectures).-->
+This reference architecture will summarize the best practices and Architecture Decisions for Watsonx GenAI Pattern deployment on IBM Cloud.
 
-:information_source:
+AI hold the promise to revolutionize life and business but raises concerns in trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating this complex landscape. This reference architecture showcases how IBM Cloud and Watsonx provide a secure environment for deploying and governing Gen AI applications. 
 
-This reference architecture will summarize the best practices and Architecture Decisions for Watsonx RAG Pattern deployment on IBM Cloud.
+A more specific use case of this pattern would include a [RAG](https://www.ibm.com/architectures/hybrid/genai-rag) pattern which stands for Retrieval Augmented Generation. RAG enables foundation models to produce factually correct outputs by querying relevant content from a company's own data source. Below is a diagram that shows the overall flow for a RAG solution. Please note that this is not the entire reference architecture, but a small portion highlighted for better understanding of what is possible with this GenAI reference architecture this example is implemented in the larger GenAI reference architecture, it would be a part of the Workload VPC and SaaS sections which is shown below in the architecture diagram.
 
-AI hold the promise to revolutionize life and business but raises concerns in trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating this complex landscape. This reference architecture will showcase how IBM Cloud and WatsonX provide a secure environment for deploying and governing Gen AI RAG pattern applications. 
-
-Retrieval Augmented Generation (RAG) pattern where the AI power natural language search query gets relevant content from a company's data. A use case could include an insurance company virtual assistant. Prospective clients can interact with the virtual agent and ask questions about insurance.
-
+![RAG.](rag-pattern-v2.svg "RAG"){: caption="Figure 1. RAG Pattern" caption-side="bottom"}
 
 ## Architecture diagram
 {: #architecture-diagram}
 
-![Architecture.](ref-arch.svg "Architecture"){: caption="Figure 1. Reference Architecture" caption-side="bottom"}
-
-If you have a list or text to describe the diagram, include it here.
+![Architecture.](watsonx-ref-arch.svg "Architecture"){: caption="Figure 2. Reference Architecture" caption-side="bottom"}
 
 ## Design concepts
 {: #design-concepts}
@@ -75,7 +70,7 @@ Below is a map that covers design considerations and architecture decisions for 
 * **Resiliency:** High availability
 * **Service Management:** Monitoring, Logging, Auditing/tracking, Automated deployment
 
-![heatmap](heatmap.svg "Current diagram"){: caption="Figure 2. Figure 2. Architecture design scope" caption-side="bottom"}
+![heatmap](heatmap.svg "Current diagram"){: caption="Figure 3. Architecture design scope" caption-side="bottom"}
 
 ## Requirements
 {: #requirements}
@@ -101,7 +96,7 @@ Update the following table below with components that are unique to this archite
 
 | Aspects | Architecture components | How the component is used |
 | -------------- | -------------- | -------------- |
-| Data | [WatsonX Assistance](https://www.ibm.com/products/watsonx-assistant) | Conversational artificial intelligence platform |
+| Data | [Watsonx Assistance](https://www.ibm.com/products/Watsonx-assistant) | Conversational artificial intelligence platform |
 |  | [Watson Discovery](https://www.ibm.com/products/watson-discovery) | Automates the discovery of information and insights with advanced Natural Language Processing and Understanding. |
 | Compute | [Virtual Servers for VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui) | Web, App, and database servers |
 | Storage | [Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | Web app static content, backups, logs (application, operational, and audit logs) |
