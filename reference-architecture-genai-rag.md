@@ -46,7 +46,7 @@ the toc attributes on the H1, repeating the values from the YAML header.
 
 This reference architecture will summarize the best practices and Architecture Decisions for Watsonx GenAI Pattern deployment on IBM Cloud.
 
-AI hold the promise to revolutionize life and business but raises concerns in trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating this complex landscape. This reference architecture showcases how IBM Cloud and Watsonx provide a secure environment for deploying and governing Gen AI applications. 
+AI holds the promise to revolutionize life and business but raises concerns in trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating this complex landscape. This reference architecture showcases how IBM Cloud and Watsonx provide a secure environment for deploying and governing Gen AI applications. 
 
 A more specific use case of this pattern would include a [RAG](https://www.ibm.com/architectures/hybrid/genai-rag) pattern which stands for Retrieval Augmented Generation. RAG enables foundation models to produce factually correct outputs by querying relevant content from a company's own data source. Below is a diagram that shows the overall flow for a RAG solution. Please note that this is not the entire reference architecture, but a small portion highlighted for better understanding of what is possible with this GenAI reference architecture this example is implemented in the larger GenAI reference architecture, it would be a part of the Workload VPC and SaaS sections which is shown below in the architecture diagram.
 
@@ -57,20 +57,41 @@ A more specific use case of this pattern would include a [RAG](https://www.ibm.c
 
 ![Architecture.](watsonx-ref-arch.svg "Architecture"){: caption="Figure 2. Reference Architecture" caption-side="bottom"}
 
+Central to the architecture are two VPCs, which provide for separation of concerns between provider management functionality and consumer workloads.
+
+**Management VPC**<br>
+Provides compute, storage, and network services to enable the application application provider's administrators to monitor, operate, and maintain the environment.
+
+**Workload VPC**<br>
+Provides compute, storage, and network services to support hosted applications and operations that deliver services to the consumer.
+
+**Edge VPC**<br>
+ Allow consumers to access your service through the public internet.
+
+Other features of the reference architecture:<br>
+
+* Resides in one or more multizone regions.
+
+* Enables access to the management VPC from the application provider's enterprise environment through IBM Cloud Virtual Private Network (VPN) for VPC.
+
+* Provides connectivity from the consumer's enterprise environment to the workload VPC through Direct Link 
+
+* Connects management VPC and workload VPC by using IBM Cloud® Transit Gateway.
+
 ## Design concepts
 {: #design-concepts}
 
 Below is a map that covers design considerations and architecture decisions for the following aspects and domains:
 * **Data:** Artifical Intelligence
-* **Compute:** Virtual Servers
-* **Storage:** Primary storage
-* **Networking:** Enterprise connectivity, BYOIP / Edge gateways, Load balancing, Domain name services
-* **Security:** Data secuirty, Identity & access, Application security, Infrastructure & endpoints, and Governance, risk & compliance
-* **DevOps:** Build & test, Delivery pipeline, Code repository
-* **Resiliency:** High availability
-* **Service Management:** Monitoring, Logging, Auditing/tracking, Automated deployment
+* **Compute:** Virtual Servers, Containers, Serverless
+* **Storage:** Primary Storage
+* **Networking:** Enterprise Connectivity, Load Balancing, Domain Name Services
+* **Security:** Data Secuirty, Identity & Access, Application Security, Infrastructure & Endpoints, Governance, Risk & Compliance
+* **DevOps:** Build & Test, Delivery Pipeline, Code Repository
+* **Resiliency:** High Availability
+* **Service Management:** Monitoring, Logging, Auditing/tracking, Automated Deployment
 
-![heatmap](heatmap.svg "Current diagram"){: caption="Figure 3. Architecture design scope" caption-side="bottom"}
+![heatmap](heatmap-v2.svg "Current diagram"){: caption="Figure 3. Architecture design scope" caption-side="bottom"}
 
 ## Requirements
 {: #requirements}
@@ -79,7 +100,6 @@ The following table outlines the requirements that are addressed in this archite
 
 | Aspect | Requirements |
 | -------------- | -------------- |
-| Data            | Data residency requirements require that the customer’s data not leave the region. |
 | Compute            | Provide properly isolated compute resources with adequate compute capacity for the applications. |
 | Storage            | Provide storage that meets the application and database performance requirements. |
 | Networking         | Deploy workloads in isolated environment and enforce information flow policies. \n Provide secure, encrypted connectivity to the cloud’s private network for management purposes. \n Distribute incoming application requests across available compute resources. \n Support failover of application to alternate site in the event of planned or unplanned outages \n Provide public and private DNS resolution to support use of hostnames instead of IP addresses. |
@@ -98,7 +118,12 @@ Update the following table below with components that are unique to this archite
 | -------------- | -------------- | -------------- |
 | Data | [Watsonx Assistance](https://www.ibm.com/products/Watsonx-assistant) | Conversational artificial intelligence platform |
 |  | [Watson Discovery](https://www.ibm.com/products/watson-discovery) | Automates the discovery of information and insights with advanced Natural Language Processing and Understanding. |
+|  | [Watsonx.ai](https://www.ibm.com/products/watsonx-ai) | Brings together new generative AI capabilities powered by foundation models and traditional machine learning (ML) into a powerful studio spanning the AI lifecycle. |
+|  | [Watsonx.data](https://www.ibm.com/products/watsonx-data) | Enables you to scale analytics and AI with all your data, wherever it resides. |
+|  | [Watsonx.governance](https://www.ibm.com/products/watsonx-governance) | Direct, manage and monitor the artificial intelligence activities. |
 | Compute | [Virtual Servers for VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui) | Web, App, and database servers |
+| | [Code Engine](https://cloud.ibm.com/docs/codeengine?topic=codeengine-about) |  Code Engine abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code.|
+| | [Red Hat OpenShift Kubernetes Service (ROKS)](https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started) | A managed offering to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud. |
 | Storage | [Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | Web app static content, backups, logs (application, operational, and audit logs) |
 |  | [VPC Block Storage](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-block) | Web app storage if needed |
 | Networking | [VPC Virtual Private Network (VPN)](https://cloud.ibm.com/docs/iaas-vpn?topic=iaas-vpn-getting-started) | Remote access to manage resources in private network |
@@ -108,11 +133,12 @@ Update the following table below with components that are unique to this archite
 |  | [Transit Gateway (TGW)](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started) | Connects the Workload and Management VPCs within a region.
 |  | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started) | Global load balancing between regions. Public DNS resolution. |
 | Security | [IAM](https://cloud.ibm.com/docs/account?topic=account-cloudaccess) | IBM Cloud Identity & Access Management |
+|  | [Key Protect](https://cloud.ibm.com/docs/key-protect?topic=key-protect-about) | A full-service encryption solution that allows data to be secured and stored in IBM Cloud using the latest envelope encryption techniques that leverage FIPS 140-2 Level 3 certified cloud-based hardware security modules. |
 |  | [BYO Bastion Host on VPC VSI](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management |
-|  | [Hyper Protect Crypto Services (HPCS)](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) | Hardware security module (HSM) and Key Management Service |
 |  | [App ID](https://cloud.ibm.com/docs/appid?topic=appid-getting-started) | Add authentication to web and mobile apps. |
 |  | [Secrets Manager](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
 |  | [Security and Compliance Center (SCC)](https://cloud.ibm.com/docs/security-compliance?topic=security-compliance-getting-started) | Define policy as code, implement controls for secure data and workload deployments, and assess security and compliance posture. |
+|  | [Hyper Protect Crypto Services (HPCS)](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) | Hardware security module (HSM) and Key Management Service |
 | DevOps | [Continuous Integration (CI)](https://cloud.ibm.com/docs/containers?topic=containers-cicd) | 	A pipeline that tests, scans and builds the deployable artifacts from the application repositories. |
 |  | [Continuous Deployment (CD)](https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | A pipeline that generates all of the evidence and change request summary content. |
 |  | [Container Registry](https://cloud.ibm.com/apidocs/container-registry) | Highly available, and scalable private image registry |
