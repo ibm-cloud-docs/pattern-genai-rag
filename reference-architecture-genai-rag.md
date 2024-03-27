@@ -141,6 +141,7 @@ The following table outlines the products or services used in the architecture f
 |  | [Hyper Protect Crypto Services (HPCS)](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) | Hardware security module (HSM) and Key Management Service |
 | DevOps | [Continuous Integration (CI)](https://cloud.ibm.com/docs/containers?topic=containers-cicd) | 	A pipeline that tests, scans and builds the deployable artifacts from the application repositories. |
 |  | [Continuous Deployment (CD)](https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | A pipeline that generates all of the evidence and change request summary content. |
+|  | [Continuous Compliance (CC)](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-cc-toolchain) | A pipeline that continuously scans deployed artifacts and repositories |
 |  | [Container Registry](https://cloud.ibm.com/apidocs/container-registry) | Highly available, and scalable private image registry |
 | Resiliency | 	[VPC VSIs, VPC Block across multiple zones in two regions](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-multi-region) | Web, app, database high availability and disaster recovery |
 | Service Management | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
@@ -155,7 +156,7 @@ The following table outlines the products or services used in the architecture f
 This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code. SCC implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The **IBM Cloud Framework for Financial Services** and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
 
 **CI / CD / CC Pipelines** <br>
-The [Continuous Integration]((https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-ci-toolchain)) (CI), [Continuous Deployment](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-cd-toolchain) (CD), and [Continuous Compliance](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-cc-toolchain) (CC) pipelines, referred to as OnePipeline used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of OnePipeline: 
+The Continuous Integration (CI), Continuous Deployment (CD), and Continuous Compliance (CC) pipelines, referred to as OnePipeline used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of OnePipeline: 
 
 * **Vulnerability Scans** <br>
 Vulnerability scans involve using specialized tools to look for security vulnerabilities in the code. This is crucial to identify and fix potential security issues before they become a problem in production.
