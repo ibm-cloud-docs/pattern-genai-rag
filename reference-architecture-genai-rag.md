@@ -151,7 +151,25 @@ The following table outlines the products or services used in the architecture f
 ## Compliance
 {: #compliance}
 
-This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implement controls for secure data and workload deployments, and assess security and compliance posture. For this reference architecture two profiles are used. The **IBM Cloud Framework for Financial Services** and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
+**Security and Compliance Center (SCC)** <br>
+This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code. SCC implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The **IBM Cloud Framework for Financial Services** and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
+
+**CI / CD / CC** <br>
+The Continuous Integration [(CI)](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-ci-toolchain), Continuous Deployment [(CD)](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-cd-toolchain), and Continuous Compliance [(CC)](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-cc-toolchain) pipelines, referred to as OnePipeline used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of OnePipeline: 
+
+* **Vulnerability Scans** <br>
+Vulnerability scans involve using specialized tools to look for security vulnerabilities in the code. This is crucial to identify and fix potential security issues before they become a problem in production.
+
+* **Sign Build Artifacts** <br>
+The code is compiled and built into software or application artifacts (like executable files or libraries). These artifacts are then digitally signed to ensure their authenticity and integrity.
+
+* **Evidence Gathering** <br>
+This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. It helps in tracing back and understanding what happened at different stages of development.
+
+* **Evidence Locker** <br>
+This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. It helps in tracing back and understanding what happened at different stages of development.
+
+
 
 
 <!-- ## Next steps
