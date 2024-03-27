@@ -154,7 +154,7 @@ The following table outlines the products or services used in the architecture f
 **Security and Compliance Center (SCC)** <br>
 This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code. SCC implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The **IBM Cloud Framework for Financial Services** and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
 
-**CI / CD / CC** <br>
+**CI / CD / CC Pipelines** <br>
 The [Continuous Integration]((https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-ci-toolchain)) (CI), [Continuous Deployment](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-cd-toolchain) (CD), and [Continuous Compliance](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-cc-toolchain) (CC) pipelines, referred to as OnePipeline used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of OnePipeline: 
 
 * **Vulnerability Scans** <br>
