@@ -43,7 +43,7 @@ https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-g
 The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include
 the toc attributes on the H1, repeating the values from the YAML header.
  -->
-This reference architecture summarizes the best practices and architecture decisions for Watsonx Gen AI Pattern deployment on IBM Cloud.
+This reference architecture summarizes the best practices for Watsonx Gen AI Pattern deployment on IBM Cloud.
 
 AI holds the promise to transform life and business but raises concerns around trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating its complex landscape. This reference architecture showcases how IBM Cloud and Watsonx provide a secure environment for deploying and governing Gen AI applications. 
 
@@ -54,6 +54,8 @@ A more specific use case of this pattern is a Retrieval Augmented Generation [(R
 
 ## Architecture diagram
 {: #architecture-diagram}
+
+The below diagram represents the architecture for Gen AI on IBM cloud and reuses the [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-about) for IBM Cloud for Financial Services and [VPC reference architecture](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about).
 
 ![Architecture.](watsonx-ref-arch.svg "Architecture"){: caption="Figure 2. Reference Architecture" caption-side="bottom"}
 
@@ -152,9 +154,6 @@ The following table outlines the products or services used in the architecture f
 ## Compliance
 {: #compliance}
 
-**Security and Compliance Center (SCC)** <br>
-This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code. SCC implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The **IBM Cloud Framework for Financial Services** and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
-
 **CI / CD / CC Pipelines** <br>
 The Continuous Integration (CI), Continuous Deployment (CD), and Continuous Compliance (CC) pipelines, referred to as OnePipeline used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of OnePipeline: 
 
@@ -169,6 +168,9 @@ This involves collecting and storing evidence of the development process, such a
 
 * **Evidence Locker** <br>
 This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. It helps in tracing back and understanding what happened at different stages of development.
+
+**Security and Compliance Center (SCC)** <br>
+This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code. SCC implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
 
 
 
