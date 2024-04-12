@@ -88,7 +88,7 @@ Below is a map that covers design considerations and architecture decisions for 
 * **Compute:** Virtual Servers, Containers, Serverless
 * **Storage:** Primary Storage
 * **Networking:** Enterprise Connectivity, Load Balancing, Domain Name Services
-* **Security:** Data Secuirty, Identity & Access, Application Security, Infrastructure & Endpoints, Governance, Risk & Compliance
+* **Security:** Data Security, Identity & Access, Application Security, Infrastructure & Endpoints, Governance, Risk & Compliance
 * **DevOps:** Build & Test, Delivery Pipeline, Code Repository
 * **Resiliency:** High Availability
 * **Service Management:** Monitoring, Logging, Auditing / tracking, Automated Deployment
@@ -155,7 +155,7 @@ The following table outlines the products or services used in the architecture f
 {: #compliance}
 
 **CI / CD / CC Pipelines** <br>
-The Continuous Integration (CI), Continuous Deployment (CD), and Continuous Compliance (CC) pipelines, referred to as OnePipeline used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of OnePipeline: 
+The Continuous Integration (CI), Continuous Deployment (CD), and Continuous Compliance (CC) pipelines, referred to as [DevSecOps Application Lifecycle Management](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-devsecops-alm-e1c16cac-7ea8-413f-a819-67e3a3251e44-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D) are used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of DevSecOps Application Lifecycle Management: 
 
 * **Vulnerability Scans** <br>
 Vulnerability scans involve using specialized tools to look for security vulnerabilities in the code. This is crucial to identify and fix potential security issues before they become a problem in production.
@@ -170,10 +170,7 @@ This involves collecting and storing evidence of the development process, such a
 This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. It helps in tracing back and understanding what happened at different stages of development.
 
 **Security and Compliance Center (SCC)** <br>
-This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code. SCC implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
-
-
-
+This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
 
 <!-- ## Next steps
 {: #next-steps}
