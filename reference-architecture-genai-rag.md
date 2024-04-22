@@ -68,7 +68,7 @@ Provides compute, storage, and network services to enable the client or service 
 Provides compute, storage, and network services to support hosted applications and operations that deliver services to the consumer.
 
 **Edge VPC**<br>
-The edge VPC is used to enhance boundary protection for both the management VPC and the workload VPC be providing centralized security services. [(see here)](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-workload)
+The edge VPC is used to enhance boundary protection for the workload VPC, by allow consumers to access Gen AI User Interface through the public internet. [(see here)](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-workload)
 
 Other features of the reference architecture:<br>
 
