@@ -21,6 +21,8 @@ docs: /docs/genai-pattern
 
 content-type: reference-architecture
 
+production: true
+
 ---
 <!--
 The following line inserts all the attribute definitions. Don't delete.
