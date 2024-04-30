@@ -8,7 +8,7 @@ toc:
     audience: solution
     content-type: reference-architecture
     navigation: hidden
-    href: /docs?tab=solutions
+    href: /docs/pattern-genai-rag
     path: pattern-genai-rag
     label: RAG pattern for watsonx on IBM Cloud
 
