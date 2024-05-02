@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-05-02"
 
-subcollection: genai-pattern
+subcollection: pattern-genai-rag
 
 authors:
 - name: Ana Biazetti
@@ -17,7 +17,7 @@ version: 1.0
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
-docs: /docs/genai-pattern
+docs: https://cloud.ibm.com/docs/pattern-genai-rag
 
 content-type: reference-architecture
 
@@ -36,6 +36,7 @@ or tile in the IBM Cloud catalog, match the title to the catalog. See
 https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
+---
 # Gen AI Pattern for Watsonx on IBM Cloud <!-- H1 -->
 {: #genai-pattern}
 {: toc-content-type="reference-architecture"}
