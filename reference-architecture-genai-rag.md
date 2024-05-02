@@ -36,7 +36,6 @@ or tile in the IBM Cloud catalog, match the title to the catalog. See
 https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
 -->
 
----
 # Gen AI Pattern for Watsonx on IBM Cloud <!-- H1 -->
 {: #genai-pattern}
 {: toc-content-type="reference-architecture"}
