@@ -17,6 +17,17 @@ version: 1.0
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
+use-case:
+  - AIForCustomerService
+  - AIGovernance
+  - BankingAndFinanceIndustry
+  - AIInfrastructureandServers
+  - AIPrivacyAndSecurity
+
+industry: Banking, FinancialSector, Insurance
+
+compliance: AIAct, IBMCloudFFS
+
 docs: https://cloud.ibm.com/docs/pattern-genai-rag
 
 content-type: reference-architecture
