@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-01"
 
 subcollection: pattern-genai-rag
 
@@ -15,6 +15,7 @@ version: 1.0
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
 # See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
+
 deployment-url:
 
 use-case:
@@ -35,27 +36,17 @@ content-type: reference-architecture
 production: true
 
 ---
-<!--
-The following line inserts all the attribute definitions. Don't delete.
--->
+
 {{site.data.keyword.attribute-definition-list}}
 
-<!--
-Don't include "reference architecture" in the following title.
-Specify a title based on a use case. If the architecture has a module
-or tile in the IBM Cloud catalog, match the title to the catalog. See
-https://test.cloud.ibm.com/docs/solution-as-code?topic=solution-as-code-naming-guidance.
--->
 
-# Gen AI Pattern for Watsonx on IBM Cloud <!-- H1 -->
+
+# Gen AI Pattern for Watsonx on IBM Cloud 
 {: #genai-pattern}
 {: toc-content-type="reference-architecture"}
 {: toc-version="1.0"}
 
-<!--
-The IDs, such as {: #title-id} are required for publishing this reference architecture in IBM Cloud Docs. Set unique IDs for each heading. Also include
-the toc attributes on the H1, repeating the values from the YAML header.
- -->
+
 This reference architecture summarizes the best practices for Watsonx Gen AI Pattern deployment on IBM Cloud.
 
 AI holds the promise to transform life and business but raises concerns around trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating its complex landscape. This reference architecture showcases how IBM Cloud and Watsonx provide a secure environment for deploying and governing Gen AI applications. 
@@ -187,10 +178,4 @@ This involves collecting and storing evidence of the development process, such a
 **Security and Compliance Center (SCC)** <br>
 This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
 
-<!-- ## Next steps
-{: #next-steps}
 
-_Optional section._ Include links to your deployment guide or next steps to get started with the architecture.
-
-
-:exclamation: **Important:** Rename this file `<architecture-name>.md`. For deployable architectures, `<architecture-name>` is the same as the deployable architecture name. -->

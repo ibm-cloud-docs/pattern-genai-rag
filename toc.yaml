@@ -11,7 +11,6 @@ toc:
     href: /docs/pattern-genai-rag
     path: pattern-genai-rag
     label: RAG pattern for watsonx on IBM Cloud
-
   entries:
   - navgroup:
       id: architecture
