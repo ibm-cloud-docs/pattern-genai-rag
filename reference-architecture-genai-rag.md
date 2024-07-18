@@ -54,7 +54,7 @@ AI holds the promise to transform life and business but raises concerns around t
 A more specific use case of this pattern is a Retrieval Augmented Generation [(RAG)](https://www.ibm.com/architectures/hybrid/genai-rag) pattern. RAG enables [foundation models](https://www.ibm.com/products/watsonx-ai/foundation-models) to produce factually correct outputs by querying relevant content. RAG is a solution for any business scenario where there is a large body of documentation that a user must consult to provide confident answers. Below is a diagram that shows the flow of a RAG solution. Please note that this is not the entire reference architecture, but a small portion highlighted for better understanding of what is possible with this Gen AI reference architecture. 
 
 
-![RAG.](rag-pattern.drawio.svg "RAG"){: caption="Figure 1. RAG Pattern" caption-side="bottom"}
+![RAG.](rag-pattern-v2.drawio.svg "RAG"){: caption="Figure 1. RAG Pattern" caption-side="bottom"}
 
 ## Architecture diagram
 {: #architecture-diagram}
@@ -127,6 +127,7 @@ The following table outlines the products or services used in the architecture f
 |  | [watsonx.ai](https://www.ibm.com/products/watsonx-ai) | Brings together new generative AI capabilities powered by foundation models and traditional machine learning (ML) into a powerful studio spanning the AI lifecycle |
 |  | [watsonx.data](https://www.ibm.com/products/watsonx-data) | Enables you to scale analytics and AI with all your data, wherever it resides |
 |  | [watsonx.governance](https://www.ibm.com/products/watsonx-governance) | Direct, manage and monitor the artificial intelligence activities |
+|  | [Elasticsearch](https://www.ibm.com/topics/elasticsearch) | Database to store vector representations  also known as embeddings created by using machine learning algorithms |
 | Compute | [Virtual Servers for VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui) | Web, App, and database servers |
 | | [Code Engine](https://cloud.ibm.com/docs/codeengine?topic=codeengine-about) |  Abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code|
 | | [Red Hat OpenShift Kubernetes Service (ROKS)](https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started) | A managed offering to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud |
