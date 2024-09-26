@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-09-26"
 
 subcollection: pattern-genai-rag
 
@@ -90,7 +90,7 @@ Other features of the reference architecture:<br>
 {: #design-concepts}
 
 Below is the Architecture Framework Design heatmap that covers design considerations and architecture decisions for the following aspects and domains:
-* **Data:** Artifical Intelligence
+* **Data:** Artificial Intelligence
 * **Compute:** Virtual Servers, Containers, Serverless
 * **Storage:** Primary Storage, Backup
 * **Networking:** Enterprise Connectivity, Load Balancing, Domain Name Services
@@ -158,8 +158,7 @@ The following table outlines the products or services used in the architecture f
 |  | [Container Registry](https://cloud.ibm.com/apidocs/container-registry) | Highly available, and scalable private image registry |
 | Resiliency | 	[VPC VSIs, VPC Block across multiple zones in two regions](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-multi-region) | Web, app, database high availability and disaster recovery |
 | Service Management | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
-|  | [IBM Log Analysis](https://cloud.ibm.com/docs/log-analysis?topic=log-analysis-getting-started) | Apps and operational logs |
-|  | [Activity Tracker Event Routing](https://cloud.ibm.com/docs/activity-tracker?topic=activity-tracker-getting-started) | Audit logs |
+|  | [IBM Cloud Logs](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started) | Scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs |
 {: caption="Table 2. Components" caption-side="bottom"}
 
 ## Compliance
