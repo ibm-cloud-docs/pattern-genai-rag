@@ -63,7 +63,7 @@ Below is a diagram that shows the flow of a RAG solution. It is not the entire r
 
 The below diagram represents the architecture for Gen AI on IBM cloud and reuses the [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-about) for IBM Cloud for Financial Services and [VPC reference architecture](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about).
 
-![Architecture.](ref-arch-watsonx.drawio.svg "Architecture"){: caption="Figure 2. Reference Architecture" caption-side="bottom"}
+![Architecture.](ref-arch-watsonx.svg "Architecture"){: caption="Figure 2. Reference Architecture" caption-side="bottom"}
 
 Central to the architecture are three VPCs, which provide for separation of concerns between provider management functionality and consumer workloads.
 
@@ -129,6 +129,7 @@ The following table outlines the products or services used in the architecture f
 |  | [watsonx.ai](https://www.ibm.com/products/watsonx-ai) | Brings together new generative AI capabilities powered by foundation models and traditional machine learning (ML) into a powerful studio spanning the AI lifecycle |
 |  | [watsonx.data](https://www.ibm.com/products/watsonx-data) | Enables you to scale analytics and AI with all your data, wherever it resides |
 |  | [watsonx.governance](https://www.ibm.com/products/watsonx-governance) | Direct, manage and monitor the artificial intelligence activities |
+|  | [watsonx Orchestrate](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=getting-started-watsonx-orchestrate) | A digital assistant and platform that uses automation to help businesses streamline processes and save time |
 |  | [IBM Cloud Databases - ElasticSearch](https://cloud.ibm.com/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-es-ml-ai) | Database to store vector representations  also known as embeddings created by using machine learning algorithms |
 |  | [Milvus](https://cloud.ibm.com/docs/watsonxdata?topic=watsonxdata-adding-milvus-service) | A vector database that stores, indexes, and manages massive embedding vectors that are developed by deep neural networks and other machine learning (ML) models. |
 | Compute | [Virtual Servers for VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui) | Web, App, and database servers |
