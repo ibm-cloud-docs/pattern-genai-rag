@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-09-26"
+lastupdated: "2024-10-07"
 
 subcollection: pattern-genai-rag
 
@@ -10,7 +10,7 @@ authors:
 - name: Ana Biazetti
 
 # The release that the reference architecture describes
-version: 1.0
+version: 2.0
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
