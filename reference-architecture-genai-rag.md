@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-22"
 
 subcollection: pattern-genai-rag
 
@@ -44,7 +44,7 @@ production: true
 # Gen AI Pattern for Watsonx on IBM Cloud 
 {: #genai-pattern}
 {: toc-content-type="reference-architecture"}
-{: toc-version="1.0"}
+{: toc-version="2.0"}
 
 
 This reference architecture summarizes the best practices for Watsonx Gen AI Pattern deployment on IBM Cloud.
