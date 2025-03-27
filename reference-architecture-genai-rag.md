@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-10-22"
+lastupdated: "2025-03-20"
 
 subcollection: pattern-genai-rag
 
