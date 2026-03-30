@@ -7,7 +7,7 @@ lastupdated: "2025-03-20"
 subcollection: pattern-genai-rag
 
 authors:
-- name: Ana Biazetti
+- name: Anuj Jain
 
 # The release that the reference architecture describes
 version: 2.0
@@ -41,19 +41,19 @@ production: true
 
 
 
-# Gen AI Pattern for Watsonx on IBM Cloud 
+# Generative AI Pattern for watsonx on IBM Cloud 
 {: #genai-pattern}
 {: toc-content-type="reference-architecture"}
 {: toc-version="2.0"}
 
 
-This reference architecture summarizes the best practices for Watsonx Gen AI Pattern deployment on IBM Cloud.
+This reference architecture summarizes the best practices for watsonx Generative AI (Gen AI) Pattern deployment on IBM Cloud.
 
-AI holds the promise to transform life and business but raises concerns around trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating its complex landscape. This reference architecture showcases how IBM Cloud and Watsonx provide a secure environment for deploying and governing Gen AI applications. 
+AI holds the promise to transform life and business but raises concerns around trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating its complex landscape. This reference architecture showcases how IBM Cloud and watsonx provide a secure environment for deploying and governing Gen AI applications. 
 
-A more specific use case of this pattern is a Retrieval Augmented Generation [(RAG)](https://www.ibm.com/architectures/hybrid/genai-rag) pattern. RAG enables [foundation models](https://www.ibm.com/products/watsonx-ai/foundation-models) to produce factually correct outputs by querying relevant content. RAG is a solution for any business scenario where there is a large body of documentation that a user must consult to provide confident answers.
+A more specific use case of this pattern is a Retrieval Augmented Generation [(RAG)](https://www.ibm.com/architectures/hybrid/genai-rag) pattern. RAG enables [foundation models](https://www.ibm.com/think/topics/foundation-models) to produce factually correct outputs by querying external or trusted sources like databases or company documents—before generating a response. RAG is a solution for any business scenario where there is a large body of content (structured or instructured) that must ustilized to provide confident answers.
 
-Below is a diagram that shows the flow of a RAG solution. It is not the entire reference architecture, but a small portion highlighting the options and key IBM Cloud components for an end-to-end RAG flow, i.e., data administration and processing, end-user gen AI application, conversational flow and gen AI task inferencing from LLMs/foundation models. For example, watsonx Assistant can provide conversational flow. It requires indexed data in Elasticsearch or Watson Discovery for content retrieval and includes an embedded LLM for response generation. In the watsonx.ai option, watsonx.ai can provide endpoints to use for querying. It provides options like in-memory and Elasticsearch for content retrieval and has watsonx.ai LLMs/foundation models for response generation.
+Below is a diagram that shows the flow of a RAG solution. It is not the entire reference architecture, but a small portion highlighting the options and key IBM Cloud components for an end-to-end RAG flow, i.e., data administration and processing, end-user gen AI application, conversational flow and gen AI task inferencing from LLMs/foundation models. For example, watsonx Assistant (or Orchestrate) can provide conversational flow. It requires indexed data in Elasticsearch or Watson Discovery for content retrieval and includes an embedded LLM for response generation. In the watsonx.ai option, watsonx.ai can provide endpoints to use for querying. It provides options like in-memory and Elasticsearch for content retrieval and has watsonx.ai LLMs/foundation models for response generation.
 
 
 ![RAG.](rag-pattern-v2.drawio.svg "RAG"){: caption="RAG Pattern" caption-side="bottom"}
