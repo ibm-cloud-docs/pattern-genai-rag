@@ -16,15 +16,6 @@ version: 2.0
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
 
 
-deployment-url:
-
-use-case:
-  - AIForCustomerService
-  - AIGovernance
-  - BankingAndFinanceIndustry
-  - AIInfrastructureandServers
-  - AIPrivacyAndSecurity
-
 industry: Banking, FinancialSector, Insurance
 
 compliance: AIAct, IBMCloudFFS
@@ -33,7 +24,7 @@ docs: https://cloud.ibm.com/docs/pattern-genai-rag
 
 content-type: reference-architecture
 
-production: true
+production: false
 
 ---
 
@@ -172,4 +163,4 @@ The following table outlines the products or services used in the architecture f
 
 * **Evidence Locker** - This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. This helps in tracing back and understanding what happened at different stages of development.
 
-**Security and Compliance Center (SCC)** - This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
+* **Security and Compliance Center (SCC)** - This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used, the [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
