@@ -1,29 +1,20 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2025-03-20"
+  years: 2024, 2026
+lastupdated: "2026-04-02"
 
 subcollection: pattern-genai-rag
 
 authors:
-- name: Ana Biazetti
+- name: Anuj Jain
 
 # The release that the reference architecture describes
 version: 2.0
 
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
-# See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 
-deployment-url:
-
-use-case:
-  - AIForCustomerService
-  - AIGovernance
-  - BankingAndFinanceIndustry
-  - AIInfrastructureandServers
-  - AIPrivacyAndSecurity
 
 industry: Banking, FinancialSector, Insurance
 
@@ -33,27 +24,27 @@ docs: https://cloud.ibm.com/docs/pattern-genai-rag
 
 content-type: reference-architecture
 
-production: true
+production: false
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
 
-
-# Gen AI Pattern for Watsonx on IBM Cloud 
+# Generative AI Pattern for watsonx on IBM Cloud 
 {: #genai-pattern}
 {: toc-content-type="reference-architecture"}
 {: toc-version="2.0"}
 
 
-This reference architecture summarizes the best practices for Watsonx Gen AI Pattern deployment on IBM Cloud.
+This reference architecture summarizes the best practices for watsonx generative AI (gen AI) Pattern deployment on IBM Cloud.
 
-AI holds the promise to transform life and business but raises concerns around trust, security, and regulatory compliance. Understanding Gen AI and its infrastructure is vital for navigating its complex landscape. This reference architecture showcases how IBM Cloud and Watsonx provide a secure environment for deploying and governing Gen AI applications. 
+AI holds the promise to transform life and business but raises concerns around trust, security, and regulatory compliance. Understanding gen AI and its infrastructure is vital for navigating its complex landscape. This reference architecture showcases how IBM Cloud and watsonx provide a secure environment for deploying and governing gen AI applications.
 
-A more specific use case of this pattern is a Retrieval Augmented Generation [(RAG)](https://www.ibm.com/architectures/hybrid/genai-rag) pattern. RAG enables [foundation models](https://www.ibm.com/products/watsonx-ai/foundation-models) to produce factually correct outputs by querying relevant content. RAG is a solution for any business scenario where there is a large body of documentation that a user must consult to provide confident answers.
+A more specific use case of this pattern is a Retrieval Augmented Generation [(RAG)](https://www.ibm.com/architectures/hybrid/genai-rag) pattern. RAG enables [foundation models](https://www.ibm.com/think/topics/foundation-models) to produce factually correct outputs by querying other internal or external trusted sources like databases or enterprise documents before generating a response. RAG is a solution for any business scenario where there is a large body of content (structured or instructured) that must ustilized to provide confident answers.
 
-Below is a diagram that shows the flow of a RAG solution. It is not the entire reference architecture, but a small portion highlighting the options and key IBM Cloud components for an end-to-end RAG flow, i.e., data administration and processing, end-user gen AI application, conversational flow and gen AI task inferencing from LLMs/foundation models. For example, watsonx Assistant can provide conversational flow. It requires indexed data in Elasticsearch or Watson Discovery for content retrieval and includes an embedded LLM for response generation. In the watsonx.ai option, watsonx.ai can provide endpoints to use for querying. It provides options like in-memory and Elasticsearch for content retrieval and has watsonx.ai LLMs/foundation models for response generation.
+Below is a diagram that shows the flow of a RAG solution. It is not the entire reference architecture, but a small portion highlighting the options and key IBM Cloud components for an end-to-end RAG flow, i.e., data administration and processing, end-user gen AI application, conversational flow and gen AI task inferencing from LLMs/foundation models. For example, watsonx Assistant (or Orchestrate) can provide conversational flow. It requires indexed data in Elasticsearch or Watson Discovery for content retrieval and includes an embedded LLM for response generation. In the watsonx.ai option, watsonx.ai can provide endpoints to use for querying. It provides options like in-memory and Elasticsearch for content retrieval and has watsonx.ai LLMs/foundation models for response generation.
 
 
 ![RAG.](rag-pattern-v2.drawio.svg "RAG"){: caption="RAG Pattern" caption-side="bottom"}
@@ -61,24 +52,21 @@ Below is a diagram that shows the flow of a RAG solution. It is not the entire r
 ## Architecture diagram
 {: #architecture-diagram}
 
-The below diagram represents the architecture for Gen AI on IBM cloud and reuses the [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-about) for IBM Cloud for Financial Services and [VPC reference architecture](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about).
+The below diagram represents the architecture for gen AI on IBM cloud and reuses the [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-about) for IBM Cloud for Financial Services and [VPC reference architecture](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about).
 
 ![Architecture.](ref-arch-watsonx.svg "Architecture"){: caption="Reference Architecture" caption-side="bottom"}
 
 Central to the architecture are three VPCs, which provide for separation of concerns between provider management functionality and consumer workloads.
 
-**Management VPC**<br>
-Provides compute, storage, and network services to enable the client or service provider's administrators to monitor, operate, and maintain the environment.
+**Management VPC** - Provides compute, storage, and network services to enable the client or service provider's administrators to monitor, operate, and maintain the environment.
 
-**Workload VPC**<br>
-Provides compute, storage, and network services to support hosted applications and operations that deliver services to the consumer.
+**Workload VPC** - Provides compute, storage, and network services to support hosted applications and operations that deliver services to the consumer.
 
-**Edge VPC**<br>
-The edge VPC is used to enhance boundary protection for the workload VPC, by allow consumers to access Gen AI User Interface through the public internet. [(see here)](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-workload#consumer-provider-different-org)
+**Edge VPC** - The edge VPC is used to enhance boundary protection for the workload VPC, by allow consumers to access gen AI User Interface through the public internet. [(see here)](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-workload#consumer-provider-different-org)
 
-Other features of the reference architecture:<br>
+Other features of the reference architecture:
 
-* Can reside in one or more multizone regions to provide additional resiliency. 
+* Can reside in one or more multizone regions to provide additional resiliency.
 
 * Enables access to the management VPC from the application provider's enterprise environment through IBM Cloud Virtual Private Network Gateway for VPC.
 
@@ -165,20 +153,14 @@ The following table outlines the products or services used in the architecture f
 ## Compliance
 {: #compliance}
 
-**CI / CD / CC Pipelines** <br>
-The Continuous Integration (CI), Continuous Deployment (CD), and Continuous Compliance (CC) pipelines, referred to as [DevSecOps Application Lifecycle Management](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-devsecops-alm-e1c16cac-7ea8-413f-a819-67e3a3251e44-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D) are used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of DevSecOps Application Lifecycle Management: 
+* **CI / CD / CC Pipelines** - The Continuous Integration (CI), Continuous Deployment (CD), and Continuous Compliance (CC) pipelines, referred to as [DevSecOps Application Lifecycle Management](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-devsecops-alm-e1c16cac-7ea8-413f-a819-67e3a3251e44-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D) are used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of DevSecOps Application Lifecycle Management:
 
-* **Vulnerability Scans** <br>
-Vulnerability scans involve using specialized tools to look for security vulnerabilities in the code. This is crucial to identify and fix potential security issues before they become a problem in production.
+* **Vulnerability Scans** - Vulnerability scans involve using specialized tools to look for security vulnerabilities in the code. This is crucial to identify and fix potential security issues before they become a problem in production.
 
-* **Sign Build Artifacts** <br>
-The code is compiled and built into software or application artifacts (like executable files or libraries). These artifacts are then digitally signed to ensure their authenticity and integrity.
+* **Sign Build Artifacts** - The code is compiled and built into software or application artifacts (like executable files or libraries). These artifacts are then digitally signed to ensure their authenticity and integrity.
 
-* **Evidence Gathering** <br>
-This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. It helps in tracing back and understanding what happened at different stages of development.
+* **Evidence Gathering** - This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. It helps in tracing back and understanding what happened at different stages of development.
 
-* **Evidence Locker** <br>
-This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. This helps in tracing back and understanding what happened at different stages of development.
+* **Evidence Locker** - This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. This helps in tracing back and understanding what happened at different stages of development.
 
-**Security and Compliance Center (SCC)** <br>
-This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used. The [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
+* **Security and Compliance Center (SCC)** - This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used, the [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
