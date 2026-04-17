@@ -164,3 +164,25 @@ The following table outlines the products or services used in the architecture f
 * **Evidence Locker** - This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. This helps in tracing back and understanding what happened at different stages of development.
 
 * **Security and Compliance Center (SCC)** - This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used, the [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
+
+## Deployment
+{: #ailz-deploy}
+
+The [Landing zone for cloud-native AI applications](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) deployable architecture automates the intial deployment of the described cloud-native gen AI architecture either utilizing Red Hat OpenShift Kubernetes Service or Code Engine. 
+
+### Before you begin
+{: #ailz-prereqs}
+
+You need the following items to deploy and configure this reference architecture:
+
+* An [IBM Cloud account](https://cloud.ibm.com/registration).
+* Required IAM access policies defined in the [aeployable architecture](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global).
+
+### Provision Architecture
+{: #ailz-provision}
+
+You can provision the Landing zone for cloud-native AI applications deployable architecture via the IBM Cloud catalog.  
+
+1. Access the [Landing zone for cloud-native AI applications](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) deployable architecture.
+2. Select your setup, either using Code Engine or Red Hat OpenShift for you cloud-native AI application and whether to deploy the sample Retrieval-Augmented Generation (RAG) application.
+  
