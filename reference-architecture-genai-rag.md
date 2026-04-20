@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-20"
 
 subcollection: pattern-genai-rag
 
@@ -15,10 +15,6 @@ version: 2.0
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
 
-
-industry: Banking, FinancialSector, Insurance
-
-compliance: AIAct, IBMCloudFFS
 
 docs: https://cloud.ibm.com/docs/pattern-genai-rag
 
@@ -167,7 +163,7 @@ The following table outlines the products or services used in the architecture f
 ## Deployment
 {: #ailz-deploy}
 
-The [Landing zone for cloud-native AI applications](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) deployable architecture automates the intial deployment of the described cloud-native gen AI architecture either utilizing Red Hat OpenShift Kubernetes Service or Code Engine. 
+The [Landing zone for cloud-native AI applications](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) deployable architecture automates the intial deployment of the described cloud-native gen AI architecture either utilizing Red Hat OpenShift Kubernetes Service or Code Engine.
 
 ### Before you begin
 {: #ailz-prereqs}
@@ -180,8 +176,7 @@ You need the following items to deploy and configure this reference architecture
 ### Provision Architecture
 {: #ailz-provision}
 
-You can provision the Landing zone for cloud-native AI applications deployable architecture via the IBM Cloud catalog.  
+You can provision the Landing zone for cloud-native AI applications deployable architecture via the IBM Cloud catalog.
 
 1. Access the [Landing zone for cloud-native AI applications](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) deployable architecture.
 2. Select your setup, either using Code Engine or Red Hat OpenShift for you cloud-native AI application and whether to deploy the sample Retrieval-Augmented Generation (RAG) application.
-  
