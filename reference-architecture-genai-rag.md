@@ -38,7 +38,7 @@ This reference architecture summarizes the best practices for watsonx generative
 
 AI holds the promise to transform life and business but raises concerns around trust, security, and regulatory compliance. Understanding gen AI and its infrastructure is vital for navigating its complex landscape. This reference architecture showcases how IBM Cloud and watsonx provide a secure environment for deploying and governing gen AI applications.
 
-A more specific use case of this pattern is a Retrieval Augmented Generation [(RAG)](https://www.ibm.com/architectures/hybrid/genai-rag) pattern. RAG enables [foundation models](https://www.ibm.com/think/topics/foundation-models) to produce factually correct outputs by querying other internal or external trusted sources like databases or enterprise documents before generating a response. RAG is a solution for any business scenario where there is a large body of content (structured or instructured) that must ustilized to provide confident answers.
+A more specific use case of this pattern is a Retrieval Augmented Generation [(RAG)](https://www.ibm.com/think/architectures/patterns/genai-rag) pattern. RAG enables [foundation models](https://www.ibm.com/think/topics/foundation-models) to produce factually correct outputs by querying other internal or external trusted sources like databases or enterprise documents before generating a response. RAG is a solution for any business scenario where there is a large body of content (structured or instructured) that must ustilized to provide confident answers.
 
 Below is a diagram that shows the flow of a RAG solution. It is not the entire reference architecture, but a small portion highlighting the options and key IBM Cloud components for an end-to-end RAG flow, i.e., data administration and processing, end-user gen AI application, conversational flow and gen AI task inferencing from LLMs/foundation models. For example, watsonx Assistant (or Orchestrate) can provide conversational flow. It requires indexed data in Elasticsearch or Watson Discovery for content retrieval and includes an embedded LLM for response generation. In the watsonx.ai option, watsonx.ai can provide endpoints to use for querying. It provides options like in-memory and Elasticsearch for content retrieval and has watsonx.ai LLMs/foundation models for response generation.
 
@@ -48,7 +48,7 @@ Below is a diagram that shows the flow of a RAG solution. It is not the entire r
 ## Architecture diagram
 {: #architecture-diagram}
 
-The below diagram represents the architecture for gen AI on IBM cloud and reuses the [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-about) for IBM Cloud for Financial Services and [VPC reference architecture](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about).
+The below diagram represents the architecture for gen AI on IBM cloud and reuses the [best practices](/docs/framework-financial-services?topic=framework-financial-services-about) for IBM Cloud for Financial Services and [VPC reference architecture](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about).
 
 ![Architecture.](ref-arch-watsonx-Full-Ref.png "Architecture"){: caption="Reference Architecture" caption-side="bottom"}{: external download="ref-arch-watsonx.svg"}
 
@@ -58,7 +58,7 @@ Central to the architecture are three VPCs, which provide for separation of conc
 
 **Workload VPC** - Provides compute, storage, and network services to support hosted applications and operations that deliver services to the consumer.
 
-**Edge VPC** - The edge VPC is used to enhance boundary protection for the workload VPC, by allow consumers to access gen AI User Interface through the public internet. [(see here)](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-workload#consumer-provider-different-org)
+**Edge VPC** - The edge VPC is used to enhance boundary protection for the workload VPC, by allow consumers to access gen AI User Interface through the public internet. [(see here)](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-workload#consumer-provider-different-org)
 
 Other features of the reference architecture:
 
@@ -108,12 +108,11 @@ The following table outlines the products or services used in the architecture f
 
 | Aspects | Architecture components | How the component is used |
 | -------------- | -------------- | -------------- |
-| Data | [Watsonx Assistant](https://www.ibm.com/products/Watsonx-assistant) | Conversational artificial intelligence platform |
-|  | [Watson Discovery](https://www.ibm.com/products/watson-discovery) | Automates the discovery of information and insights with advanced Natural Language Processing and Understanding |
+| Data | [Watson Discovery](https://www.ibm.com/products/watson-discovery) | Automates the discovery of information and insights with advanced Natural Language Processing and Understanding |
 |  | [watsonx.ai](https://www.ibm.com/products/watsonx-ai) | Brings together new generative AI capabilities powered by foundation models and traditional machine learning (ML) into a powerful studio spanning the AI lifecycle |
 |  | [watsonx.data](https://www.ibm.com/products/watsonx-data) | Enables you to scale analytics and AI with all your data, wherever it resides |
 |  | [watsonx.governance](https://www.ibm.com/products/watsonx-governance) | Direct, manage and monitor the artificial intelligence activities |
-|  | [watsonx Orchestrate](/docs/en/watsonx/watson-orchestrate/current?topic=getting-started-watsonx-orchestrate) | A digital assistant and platform that uses automation to help businesses streamline processes and save time |
+|  | [watsonx Orchestrate](https://www.ibm.com/products/watsonx-orchestrate) | A digital assistant and platform that uses automation to help businesses streamline processes and save time |
 |  | [IBM Cloud Databases - ElasticSearch](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-es-ml-ai) | Database to store vector representations  also known as embeddings created by using machine learning algorithms |
 |  | [Milvus](/docs/watsonxdata?topic=watsonxdata-adding-milvus-service) | A vector database that stores, indexes, and manages massive embedding vectors that are developed by deep neural networks and other machine learning (ML) models. |
 | Compute | [Virtual Servers for VPC](/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui) | Web, App, and database servers |
@@ -131,7 +130,7 @@ The following table outlines the products or services used in the architecture f
 | Security | [IAM](/docs/iam?topic=iam-cloudaccess) | IBM Cloud Identity & Access Management |
 |  | [Key Protect](/docs/key-protect?topic=key-protect-about) | A full-service encryption solution that allows data to be secured and stored in IBM Cloud |
 |  | [BYO Bastion Host on VPC VSI](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management |
-|  | [App ID](h/docs/appid?topic=appid-getting-started) | Add authentication to web and mobile apps |
+|  | [App ID](/docs/appid?topic=appid-getting-started) | Add authentication to web and mobile apps |
 |  | [Secrets Manager](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
 |  | [Security and Compliance Center Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
 |  | [Virtual Network Function (VNF)](/docs/vpc?topic=vpc-deploy-vnf) | Virtualized network services running on virtual machines. |
