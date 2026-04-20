@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-20"
 
 subcollection: pattern-genai-rag
 
@@ -15,10 +15,6 @@ version: 2.0
 # Use if the reference architecture has deployable code.
 # Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
 
-
-industry: Banking, FinancialSector, Insurance
-
-compliance: AIAct, IBMCloudFFS
 
 docs: https://cloud.ibm.com/docs/pattern-genai-rag
 
@@ -47,14 +43,14 @@ A more specific use case of this pattern is a Retrieval Augmented Generation [(R
 Below is a diagram that shows the flow of a RAG solution. It is not the entire reference architecture, but a small portion highlighting the options and key IBM Cloud components for an end-to-end RAG flow, i.e., data administration and processing, end-user gen AI application, conversational flow and gen AI task inferencing from LLMs/foundation models. For example, watsonx Assistant (or Orchestrate) can provide conversational flow. It requires indexed data in Elasticsearch or Watson Discovery for content retrieval and includes an embedded LLM for response generation. In the watsonx.ai option, watsonx.ai can provide endpoints to use for querying. It provides options like in-memory and Elasticsearch for content retrieval and has watsonx.ai LLMs/foundation models for response generation.
 
 
-![RAG.](rag-pattern-v2.drawio.svg "RAG"){: caption="RAG Pattern" caption-side="bottom"}
+![RAG.](rag-pattern-v2.drawio.svg "RAG"){: caption="RAG Pattern" caption-side="bottom"}{: external download="rag-pattern-v2.drawio.svg"}
 
 ## Architecture diagram
 {: #architecture-diagram}
 
 The below diagram represents the architecture for gen AI on IBM cloud and reuses the [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-about) for IBM Cloud for Financial Services and [VPC reference architecture](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about).
 
-![Architecture.](ref-arch-watsonx.svg "Architecture"){: caption="Reference Architecture" caption-side="bottom"}
+![Architecture.](ref-arch-watsonx-Full-Ref.png "Architecture"){: caption="Reference Architecture" caption-side="bottom"}{: external download="ref-arch-watsonx.svg"}
 
 Central to the architecture are three VPCs, which provide for separation of concerns between provider management functionality and consumer workloads.
 
@@ -117,43 +113,42 @@ The following table outlines the products or services used in the architecture f
 |  | [watsonx.ai](https://www.ibm.com/products/watsonx-ai) | Brings together new generative AI capabilities powered by foundation models and traditional machine learning (ML) into a powerful studio spanning the AI lifecycle |
 |  | [watsonx.data](https://www.ibm.com/products/watsonx-data) | Enables you to scale analytics and AI with all your data, wherever it resides |
 |  | [watsonx.governance](https://www.ibm.com/products/watsonx-governance) | Direct, manage and monitor the artificial intelligence activities |
-|  | [watsonx Orchestrate](https://www.ibm.com/docs/en/watsonx/watson-orchestrate/current?topic=getting-started-watsonx-orchestrate) | A digital assistant and platform that uses automation to help businesses streamline processes and save time |
-|  | [IBM Cloud Databases - ElasticSearch](https://cloud.ibm.com/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-es-ml-ai) | Database to store vector representations  also known as embeddings created by using machine learning algorithms |
-|  | [Milvus](https://cloud.ibm.com/docs/watsonxdata?topic=watsonxdata-adding-milvus-service) | A vector database that stores, indexes, and manages massive embedding vectors that are developed by deep neural networks and other machine learning (ML) models. |
-| Compute | [Virtual Servers for VPC](https://cloud.ibm.com/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui) | Web, App, and database servers |
-| | [Code Engine](https://cloud.ibm.com/docs/codeengine?topic=codeengine-about) |  Abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code|
-| | [Red Hat OpenShift Kubernetes Service (ROKS)](https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started) | A managed offering to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud |
-| Storage | [Cloud Object Storage](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | Web app static content, backups, logs (application, operational, and audit logs) |
-|  | [VPC Block Storage](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-block) | Web app storage if needed |
-| Networking | [VPC Virtual Private Network (VPN)](https://cloud.ibm.com/docs/iaas-vpn?topic=iaas-vpn-getting-started) | Remote access to manage resources in private network |
-|  | [Virtual Private Endpoint (VPE)](https://cloud.ibm.com/docs/vpc?topic=vpc-about-vpe) | For private network access to Cloud Services, e.g., Key Protect, COS, etc. |
-|  | [VPC Load Balancers](https://cloud.ibm.com/docs/vpc?topic=vpc-load-balancers) | Application Load Balancing for web servers, app servers, and database servers |
-|  | [Direct Link 2.0](https://cloud.ibm.com/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) | Seamlessly connect on-premises resources to cloud resources |
-|  | [Transit Gateway (TGW)](https://cloud.ibm.com/docs/transit-gateway?topic=transit-gateway-getting-started) | Connects the Workload and Management VPCs within a region
-|  | [Cloud Internet Services (CIS)](https://cloud.ibm.com/docs/cis?topic=cis-getting-started) | Global load balancing between regions |
-|  | [Access Control List (ACL)](https://cloud.ibm.com/docs/vpc?topic=vpc-using-acls) | To control all incoming and outgoing traffic in Virtual Private Cloud |
-| Security | [IAM](https://cloud.ibm.com/docs/account?topic=account-cloudaccess) | IBM Cloud Identity & Access Management |
-|  | [Key Protect](https://cloud.ibm.com/docs/key-protect?topic=key-protect-about) | A full-service encryption solution that allows data to be secured and stored in IBM Cloud |
-|  | [BYO Bastion Host on VPC VSI](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management |
-|  | [App ID](https://cloud.ibm.com/docs/appid?topic=appid-getting-started) | Add authentication to web and mobile apps |
-|  | [Secrets Manager](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
-|  | [Security and Compliance Center (SCC)](https://cloud.ibm.com/docs/security-compliance?topic=security-compliance-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
-|  | [Hyper Protect Crypto Services (HPCS)](https://cloud.ibm.com/docs/hs-crypto?topic=hs-crypto-get-started) | Hardware security module (HSM) and Key Management Service |
-|  | [Virtual Network Function (VNF)](https://cloud.ibm.com/docs/vpc?topic=vpc-deploy-vnf) | Virtualized network services running on virtual machines. |
-|  | [Event Notifications](https://cloud.ibm.com/docs/event-notifications?topic=event-notifications-getting-started) | Get notified about critical events that occur in your IBM Cloud account. |
-| DevOps | [Continuous Integration (CI)](https://cloud.ibm.com/docs/containers?topic=containers-cicd) | 	A pipeline that tests, scans and builds the deployable artifacts from the application repositories |
-|  | [Continuous Deployment (CD)](https://cloud.ibm.com/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | A pipeline that generates all of the evidence and change request summary content |
-|  | [Continuous Compliance (CC)](https://cloud.ibm.com/docs/devsecops?topic=devsecops-tutorial-cc-toolchain) | A pipeline that continuously scans deployed artifacts and repositories |
-|  | [Container Registry](https://cloud.ibm.com/apidocs/container-registry) | Highly available, and scalable private image registry |
-| Resiliency | 	[VPC VSIs, VPC Block across multiple zones in two regions](https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-vpc-multi-region) | Web, app, database high availability and disaster recovery |
-| Service Management | [IBM Cloud Monitoring](https://cloud.ibm.com/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
-|  | [IBM Cloud Logs](https://cloud.ibm.com/docs/cloud-logs?topic=cloud-logs-getting-started) | Scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs |
+|  | [watsonx Orchestrate](/docs/en/watsonx/watson-orchestrate/current?topic=getting-started-watsonx-orchestrate) | A digital assistant and platform that uses automation to help businesses streamline processes and save time |
+|  | [IBM Cloud Databases - ElasticSearch](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-es-ml-ai) | Database to store vector representations  also known as embeddings created by using machine learning algorithms |
+|  | [Milvus](/docs/watsonxdata?topic=watsonxdata-adding-milvus-service) | A vector database that stores, indexes, and manages massive embedding vectors that are developed by deep neural networks and other machine learning (ML) models. |
+| Compute | [Virtual Servers for VPC](/docs/vpc?topic=vpc-about-advanced-virtual-servers&interface=ui) | Web, App, and database servers |
+| | [Code Engine](/docs/codeengine?topic=codeengine-about) |  Abstracts the operational burden of building, deploying, and managing workloads in Kubernetes so that developers can focus on what matters most to them: the source code|
+| | [Red Hat OpenShift Kubernetes Service (ROKS)](/docs/openshift?topic=openshift-getting-started) | A managed offering to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud |
+| Storage | [Cloud Object Storage](/docs/cloud-object-storage?topic=cloud-object-storage-about-cloud-object-storage) | Web app static content, backups, logs (application, operational, and audit logs) |
+|  | [VPC Block Storage](/docs/openshift?topic=openshift-vpc-block) | Web app storage if needed |
+| Networking | [VPC Virtual Private Network (VPN)](/docs/iaas-vpn?topic=iaas-vpn-getting-started) | Remote access to manage resources in private network |
+|  | [Virtual Private Endpoint (VPE)](/docs/vpc?topic=vpc-about-vpe) | For private network access to Cloud Services, e.g., Key Protect, COS, etc. |
+|  | [VPC Load Balancers](/docs/vpc?topic=vpc-load-balancers) | Application Load Balancing for web servers, app servers, and database servers |
+|  | [Direct Link 2.0](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) | Seamlessly connect on-premises resources to cloud resources |
+|  | [Transit Gateway (TGW)](/docs/transit-gateway?topic=transit-gateway-getting-started) | Connects the Workload and Management VPCs within a region
+|  | [Cloud Internet Services (CIS)](/docs/cis?topic=cis-getting-started) | Global load balancing between regions |
+|  | [Access Control List (ACL)](/docs/vpc?topic=vpc-using-acls) | To control all incoming and outgoing traffic in Virtual Private Cloud |
+| Security | [IAM](/docs/iam?topic=iam-cloudaccess) | IBM Cloud Identity & Access Management |
+|  | [Key Protect](/docs/key-protect?topic=key-protect-about) | A full-service encryption solution that allows data to be secured and stored in IBM Cloud |
+|  | [BYO Bastion Host on VPC VSI](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management |
+|  | [App ID](h/docs/appid?topic=appid-getting-started) | Add authentication to web and mobile apps |
+|  | [Secrets Manager](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
+|  | [Security and Compliance Center Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
+|  | [Virtual Network Function (VNF)](/docs/vpc?topic=vpc-deploy-vnf) | Virtualized network services running on virtual machines. |
+|  | [Event Notifications](/docs/event-notifications?topic=event-notifications-getting-started) | Get notified about critical events that occur in your IBM Cloud account. |
+| DevOps | [Continuous Integration (CI)](/docs/containers?topic=containers-update_app) | 	Update strategies to manage application lifecycle |
+|  | [Continuous Deployment (CD)](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | A pipeline that generates all of the evidence and change request summary content |
+|  | [Continuous Compliance (CC)](/docs/devsecops?topic=devsecops-tutorial-cc-toolchain) | A pipeline that continuously scans deployed artifacts and repositories |
+|  | [Container Registry](/apidocs/container-registry) | Highly available, and scalable private image registry |
+| Resiliency | 	[VPC VSIs, VPC Block across multiple zones in two regions](/docs/solution-tutorials?topic=solution-tutorials-vpc-multi-region) | Web, app, database high availability and disaster recovery |
+| Service Management | [IBM Cloud Monitoring](/docs/monitoring?topic=monitoring-about-monitor) | Apps and operational monitoring |
+|  | [IBM Cloud Logs](/docs/cloud-logs?topic=cloud-logs-getting-started) | Scalable logging service that persists logs and provides users with capabilities for querying, tailing, and visualizing logs |
 {: caption="Components" caption-side="bottom"}
 
 ## Compliance
 {: #compliance}
 
-* **CI / CD / CC Pipelines** - The Continuous Integration (CI), Continuous Deployment (CD), and Continuous Compliance (CC) pipelines, referred to as [DevSecOps Application Lifecycle Management](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-devsecops-alm-e1c16cac-7ea8-413f-a819-67e3a3251e44-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D) are used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of DevSecOps Application Lifecycle Management:
+* **CI / CD / CC Pipelines** - The Continuous Integration (CI), Continuous Deployment (CD), and Continuous Compliance (CC) pipelines, referred to as [DevSecOps Application Lifecycle Management](/catalog/architecture/deploy-arch-ibm-devsecops-alm-e1c16cac-7ea8-413f-a819-67e3a3251e44-global?catalog_query=aHR0cHM6Ly9jbG91ZC5pYm0uY29tL2NhdGFsb2cjcmVmZXJlbmNlX2FyY2hpdGVjdHVyZQ%3D%3D) are used to deploy the application, check for vulnerabilities, and ensure auditability. Below are some of important compliance features of DevSecOps Application Lifecycle Management:
 
 * **Vulnerability Scans** - Vulnerability scans involve using specialized tools to look for security vulnerabilities in the code. This is crucial to identify and fix potential security issues before they become a problem in production.
 
@@ -163,4 +158,25 @@ The following table outlines the products or services used in the architecture f
 
 * **Evidence Locker** - This involves collecting and storing evidence of the development process, such as commit logs, build logs, and other relevant data. This helps in tracing back and understanding what happened at different stages of development.
 
-* **Security and Compliance Center (SCC)** - This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used, the [**IBM Cloud Framework for Financial Services**](https://cloud.ibm.com/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
+* **Security and Compliance Center (SCC)** - This reference architecture utilizes the Security and Compliance Center (SCC) which defines policy as code, implements controls for secure data and workload deployments and assess security and compliance posture. For this reference architecture two profiles are used, the [**IBM Cloud Framework for Financial Services**](/docs/framework-financial-services-controls?topic=framework-financial-services-controls-overview) and **AI ICT Guardrails**. A profile is a grouping of controls that can be evaluated for compliance.
+
+## Deployment
+{: #ailz-deploy}
+
+The [Landing zone for cloud-native AI applications](/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) deployable architecture automates the intial deployment of the described cloud-native gen AI architecture either utilizing Red Hat OpenShift Kubernetes Service or Code Engine.
+
+### Before you begin
+{: #ailz-prereqs}
+
+You need the following items to deploy and configure this reference architecture:
+
+* An [IBM Cloud account](/registration).
+* Required IAM access policies defined in the [aeployable architecture](/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global).
+
+### Provision Architecture
+{: #ailz-provision}
+
+You can provision the Landing zone for cloud-native AI applications deployable architecture via the IBM Cloud catalog.
+
+1. Access the [Landing zone for cloud-native AI applications](/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/Retrieval_Augmented_Generation_Pattern-5fdd0045-30fc-4013-a8bc-6db9d5447a52-global) deployable architecture.
+2. Select your setup, either using Code Engine or Red Hat OpenShift for you cloud-native AI application and whether to deploy the sample Retrieval-Augmented Generation (RAG) application.
