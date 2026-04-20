@@ -43,14 +43,14 @@ A more specific use case of this pattern is a Retrieval Augmented Generation [(R
 Below is a diagram that shows the flow of a RAG solution. It is not the entire reference architecture, but a small portion highlighting the options and key IBM Cloud components for an end-to-end RAG flow, i.e., data administration and processing, end-user gen AI application, conversational flow and gen AI task inferencing from LLMs/foundation models. For example, watsonx Assistant (or Orchestrate) can provide conversational flow. It requires indexed data in Elasticsearch or Watson Discovery for content retrieval and includes an embedded LLM for response generation. In the watsonx.ai option, watsonx.ai can provide endpoints to use for querying. It provides options like in-memory and Elasticsearch for content retrieval and has watsonx.ai LLMs/foundation models for response generation.
 
 
-![RAG.](rag-pattern-v2.drawio.svg "RAG"){: caption="RAG Pattern" caption-side="bottom"}
+![RAG.](rag-pattern-v2.drawio.svg "RAG"){: caption="RAG Pattern" caption-side="bottom"}{: external download="rag-pattern-v2.drawio.svg"}
 
 ## Architecture diagram
 {: #architecture-diagram}
 
 The below diagram represents the architecture for gen AI on IBM cloud and reuses the [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-about) for IBM Cloud for Financial Services and [VPC reference architecture](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-about).
 
-![Architecture.](ref-arch-watsonx.svg "Architecture"){: caption="Reference Architecture" caption-side="bottom"}
+![Architecture.](ref-arch-watsonx-Full-Ref.png "Architecture"){: caption="Reference Architecture" caption-side="bottom"}{: external download="ref-arch-watsonx.svg"}
 
 Central to the architecture are three VPCs, which provide for separation of concerns between provider management functionality and consumer workloads.
 
@@ -128,15 +128,15 @@ The following table outlines the products or services used in the architecture f
 |  | [Transit Gateway (TGW)](/docs/transit-gateway?topic=transit-gateway-getting-started) | Connects the Workload and Management VPCs within a region
 |  | [Cloud Internet Services (CIS)](/docs/cis?topic=cis-getting-started) | Global load balancing between regions |
 |  | [Access Control List (ACL)](/docs/vpc?topic=vpc-using-acls) | To control all incoming and outgoing traffic in Virtual Private Cloud |
-| Security | [IAM](/docs/account?topic=account-cloudaccess) | IBM Cloud Identity & Access Management |
+| Security | [IAM](/docs/iam?topic=iam-cloudaccess) | IBM Cloud Identity & Access Management |
 |  | [Key Protect](/docs/key-protect?topic=key-protect-about) | A full-service encryption solution that allows data to be secured and stored in IBM Cloud |
 |  | [BYO Bastion Host on VPC VSI](/docs/framework-financial-services?topic=framework-financial-services-vpc-architecture-connectivity-bastion-tutorial-teleport) | Remote access with Privileged Access Management |
 |  | [App ID](h/docs/appid?topic=appid-getting-started) | Add authentication to web and mobile apps |
 |  | [Secrets Manager](/docs/secrets-manager?topic=secrets-manager-getting-started#getting-started) | Certificate and Secrets Management |
-|  | [Security and Compliance Center (SCC)](/docs/security-compliance?topic=security-compliance-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
+|  | [Security and Compliance Center Workload Protection](/docs/workload-protection?topic=workload-protection-getting-started) | Implement controls for secure data and workload deployments, and assess security and compliance posture |
 |  | [Virtual Network Function (VNF)](/docs/vpc?topic=vpc-deploy-vnf) | Virtualized network services running on virtual machines. |
 |  | [Event Notifications](/docs/event-notifications?topic=event-notifications-getting-started) | Get notified about critical events that occur in your IBM Cloud account. |
-| DevOps | [Continuous Integration (CI)](/docs/containers?topic=containers-cicd) | 	A pipeline that tests, scans and builds the deployable artifacts from the application repositories |
+| DevOps | [Continuous Integration (CI)](/docs/containers?topic=containers-update_app) | 	Update strategies to manage application lifecycle |
 |  | [Continuous Deployment (CD)](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started) | A pipeline that generates all of the evidence and change request summary content |
 |  | [Continuous Compliance (CC)](/docs/devsecops?topic=devsecops-tutorial-cc-toolchain) | A pipeline that continuously scans deployed artifacts and repositories |
 |  | [Container Registry](/apidocs/container-registry) | Highly available, and scalable private image registry |
